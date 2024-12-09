@@ -1,0 +1,94 @@
+/* Đặt navbar luôn canh giữa màn hình */
+.navbar-custom {
+    width: 100%; /* Sử dụng chiều rộng 100% để navbar luôn đầy màn hình */
+    height: 110px;
+    padding: 16px 200px; /* Khoảng cách trái phải */
+    display: flex;
+    justify-content: space-between; /* Chia đều các phần tử */
+    align-items: center; /* Canh giữa theo chiều dọc */
+    background: rgba(255, 255, 255, 0.6);
+    box-sizing: border-box;
+}
+
+/* Cấu hình các phần tử trong navbar */
+.navbar-nav {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.navbar-nav .nav-link {
+    font-family: Helvetica;
+    font-weight: 700;
+    line-height: 32px;
+    color: black;
+    text-transform: none;
+}
+
+/* Hover effect */
+.navbar-nav .nav-link:hover {
+    color: #F14B23;
+}
+
+/* Dropdown menu */
+.dropdown-menu {
+    min-width: auto;
+}
+
+/* Remove caret from dropdown-toggle */
+.nav-link.dropdown-toggle::after {
+    display: none !important;
+}
+
+/* Tùy chỉnh để giữ tất cả các phần tử ở giữa trên màn hình rộng */
+@media (max-width: 1200px) {
+    .navbar-custom {
+        padding: 16px 100px; /* Giảm padding cho màn hình nhỏ */
+    }
+}
+
+/* Cho màn hình máy tính bảng */
+@media (max-width: 992px) {
+    .navbar-custom {
+        padding: 16px 50px; /* Giảm padding cho máy tính bảng */
+    }
+    .navbar-nav {
+        gap: 15px; /* Giảm khoảng cách giữa các phần tử */
+    }
+}
+
+/* Cho màn hình điện thoại */
+@media (max-width: 768px) {
+    .navbar-custom {
+        padding: 16px 20px; /* Giảm padding cho điện thoại */
+    }
+    .navbar-nav {
+        gap: 10px; /* Giảm khoảng cách giữa các phần tử */
+    }
+    .navbar-collapse {
+        display: none; /* Ẩn các phần tử navbar khi chưa mở */
+    }
+    .navbar-toggler {
+        display: block; /* Hiển thị nút toggler */
+    }
+}
+
+/* Khi mở navbar trên màn hình điện thoại */
+@media (max-width: 768px) {
+    .navbar-collapse {
+        display: block; /* Hiển thị navbar khi nhấn nút toggler */
+        width: 100%; /* Chiếm toàn bộ chiều rộng màn hình */
+        position: absolute;
+        top: 110px; /* Để dropdown không bị che khuất */
+        left: 0;
+        background: rgba(255, 255, 255, 0.9); /* Tăng độ trong suốt */
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    }
+}
+
+/* Cho những màn hình nhỏ hơn điện thoại */
+@media (max-width: 480px) {
+    .navbar-custom {
+        padding: 16px 10px; /* Giảm padding cho màn hình nhỏ hơn */
+    }
+}
